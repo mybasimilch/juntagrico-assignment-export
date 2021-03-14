@@ -76,6 +76,8 @@ def export_assignments(request):
         worksheet_s.write_string(0, 5, str(_('Weitere BezieherInnen')))
         worksheet_s.write_string(0, 6, str(_('Depot')))
         worksheet_s.write_string(0, 7, str(Config.vocabulary('assignment_pl')))
+        worksheet_s.write_string(0, 8, str(_('{} soll/Jahr'.format(Config.vocabulary('assignment_pl')))))
+        
 
         subs = subscriptions_with_assignments_during_timespan(
             SubscriptionDao.all_active_subscritions(), fromDate, toDate)
@@ -95,7 +97,7 @@ def export_assignments(request):
                 row, 5, sub['subscription'].other_recipients_names())
             worksheet_s.write_string(row, 6, sub['subscription'].depot.name)
             worksheet_s.write(row, 7, sub.get('assignments'))
-
+            worksheet_s.write(row, 8, sub['subscription'].required_assignments)
             row += 1
 
         workbook.close()
