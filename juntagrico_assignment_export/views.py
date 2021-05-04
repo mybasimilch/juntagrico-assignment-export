@@ -4,7 +4,6 @@ from juntagrico.dao.subscriptiondao import SubscriptionDao
 
 from django.utils.translation import gettext as _
 from django.http import HttpResponse
-from juntagrico.views import get_menu_dict
 from io import BytesIO
 from xlsxwriter import Workbook
 from juntagrico.config import Config
@@ -48,11 +47,10 @@ def subscriptions_with_assignments_during_timespan(subscriptions, from_date, to_
 
 @permission_required("juntagrico.is_operations_group")
 def export_assignments(request):
-    renderdict = get_menu_dict(request)
-    renderdict.update({
+    renderdict = {
         'menu': {'dm': 'active'},
         'change_date_disabled': True,
-    })
+    }
     if request.method == 'POST':
         parsedFrom = parse_date(request.POST['fromDate'])
         parsedTo = parse_date(request.POST['toDate'])
