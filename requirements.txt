@@ -1,1 +1,1 @@
-juntagrico-custom-sub @ git+http://github.com/juntagrico/juntagrico-custom-sub.git@master
+juntagrico-custom-sub @ git+http://github.com/juntagrico/juntagrico-custom-sub.git@main
