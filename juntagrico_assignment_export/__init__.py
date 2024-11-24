@@ -1,2 +1,2 @@
-name = 'juntagrico-assignment-export'
-version = '1.1.1'
+name = "juntagrico-assignment-export"
+version = "1.1.2rc1"
