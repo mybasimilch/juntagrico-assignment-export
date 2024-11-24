@@ -1,1 +1,1 @@
-juntagrico-custom-sub @ git+http://github.com/juntagrico/juntagrico-custom-sub.git@main
+juntagrico-custom-sub>=0.0.3,<1.0.0
