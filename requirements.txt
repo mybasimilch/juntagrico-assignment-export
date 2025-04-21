@@ -1,1 +1,1 @@
-juntagrico-custom-sub~=1.6.0
+juntagrico-custom-sub
